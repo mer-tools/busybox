@@ -4,7 +4,8 @@ Version: 1.21.0
 Release: 1
 License: GPLv2
 Group: System/Shells
-Source: %{name}-%{version}.tar.bz2
+Source0: %{name}-%{version}.tar.bz2
+Source1: busybox_config
 URL: https://github.com/mer-tools/busybox 
 
 %define debug_package %{nil}
@@ -37,9 +38,10 @@ Busybox documentation and user guides
 %setup -q -n src
 
 %build
-make defconfig
+cp %{SOURCE1} .config
+#make defconfig
 make %{_smp_mflags}
-make busybox.links
+#make busybox.links
 
 %install
 rm -rf %{buildroot}
