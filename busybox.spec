@@ -6,6 +6,7 @@ License: GPLv2
 Group: System/Shells
 Source0: %{name}-%{version}.tar.bz2
 Source1: busybox_config
+BuildRequires: glibc-static
 URL: https://github.com/mer-tools/busybox 
 
 %define debug_package %{nil}
